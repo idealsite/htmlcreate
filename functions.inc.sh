@@ -56,3 +56,4 @@ checkName () {
 		fi
 	fi
 }
+
