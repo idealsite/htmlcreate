@@ -1,23 +1,21 @@
 
 clear
-frase=(modafucka aaa)
 
-wordCount=${#frase}
-lastWord=`expr $wordCount - 1`
-for (( i = 0 ; i < $wordCount ; i++ )) ; do
-	word=${frase[$i]}
-	wordLength=`expr length $word`
-	lastLetter=`expr $wordLength - 1`
-	for (( j = 0 ;  j < $wordLength ; j++ )) ; do
-		echo -n "${word:$j:1}"
+writePhrase () {
+	phrase="$1"
+	phraseLength="${#phrase}"
+	lastLetter=`expr "$phraseLength" - 1`
+	for (( i = 0 ; i < "$phraseLength" ; i++ )) ; do
+		letter="${phrase:$i:1}"
+		echo -n "$letter"
 		sleep 0.1
-		if [ "$j" -eq "$lastLetter" ] ; then
-			echo -n " "
+		if [ "$i" -eq "$lastLetter" ] ; then
+			echo
 		fi
 	done
-	if [ "$i" -eq "$lastWord" ] ; then
-		echo
-	fi
-done
+}
+
+writePhrase "what the hell is going on?"
+
 exit 0
 
