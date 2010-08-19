@@ -1,4 +1,3 @@
-
 writePhrase () {
 	phrase="$1"
 	phraseLength="${#phrase}"
@@ -57,4 +56,3 @@ checkName () {
 		fi
 	fi
 }
-
