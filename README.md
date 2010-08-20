@@ -1,7 +1,8 @@
 # create_html
 
 ## Overview
-create_html is a Shell script to be used to create simply a new html template file into the current directory.  
+create_html is a Shell script for the laziest people.  
+It can be used to create without spending a lot of time a new html template file into the current directory.  
 It writes the html code dynamically depending on the name of the file and what to include.
 
 ## Installation
