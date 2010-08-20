@@ -23,3 +23,6 @@ It writes the html code dynamically depending on the name of the file and what t
     css_name      The name of the external css file [optional]
 
 ## Examples
+    create_html new_page jquery newstyle.css
+    create_html nicePage.html jqueryui BadStYlE
+    create_html test jqueryui jquery style
