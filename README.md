@@ -14,8 +14,8 @@ It writes the html code dynamically depending on the name of the file and what t
 
 ## Usage
 create_html is invoked ad follows:
-  create_html [-h | --help] file_name [jquery jqueryui css_name]
-  (Parameters in the square brackets are optional)
+*  create_html [-h | --help] file_name [jquery jqueryui css_name]
+   (Parameters in the square brackets are optional)
 
 Parameters:
   -h, --help    Display this help message and exit
