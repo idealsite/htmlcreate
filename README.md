@@ -1,7 +1,7 @@
 # create_html
 
 ## Overview
-create_html is a Shell script to be used to create simply a new html template file into the current directory.
+create_html is a Shell script to be used to create simply a new html template file into the current directory.  
 It writes the html code dynamically depending on the name of the file and what to include.
 
 ## Installation
@@ -13,13 +13,13 @@ It writes the html code dynamically depending on the name of the file and what t
 > 6. exit
 
 ## Usage
-create_html is invoked ad follows:
-*  create_html [-h | --help] file_name [jquery jqueryui css_name]
-   (Parameters in the square brackets are optional)
-
-Parameters:
-  -h, --help    Display this help message and exit
-  file_name     The name of the html file you want to create
+create_html is invoked ad follows:  
+    create_html [-h | --help] file_name [jquery jqueryui css_name]  
+    (Parameters in the square brackets are optional)  
+  
+Parameters:  
+    -h, --help    Display this help message and exit  
+    file_name     The name of the html file you want to create
   jquery        Include jQuery in the html file [optional]
   jqueryui      Include jQuery User Interface in the html file [optional]
   css_name      The name of the external css file [optional]
