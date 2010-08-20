@@ -39,6 +39,23 @@ function write_phrase() {
     fi
   done
 }
+function show_help() {
+  clear
+  cat << HELP
+
+create_html is invoked ad follows:
+  create_html [-h | --help] file_name [jquery jqueryui css_name]
+  (Parameters in the square brackets are optional)
+
+Parameters:
+  -h, --help    Display this help message and exit
+  file_name     The name of the html file you want to create
+  jquery        Include jQuery in the html file [optional]
+  jqueryui      Include jQuery User Interface in the html file [optional]
+  css_name      The name of the external css file [optional]
+
+HELP
+}
 function check_ext() {
   spliced="$1"
   case "$2" in
@@ -174,15 +191,18 @@ function print() {
   echo "</html>" >> "$file"
 }
 function create() {
-  if [ ! "$file" ] ; then
+  if [[ "$file" = "-h" || "$file" = "--help" ]] ; then
+    show_help
+  elif [ ! "$file" ] ; then
     write_phrase "I can't create a no-name file. Tell me the name." "4"
     read "file"
     create
+  else
+    file=$(check_ext "$file" "html")
+    check_file
+    check_included
+    print
   fi
-  file=$(check_ext "$file" "html")
-  check_file
-  check_included
-  print
 }
 ##### MAIN #####
 create
