@@ -1,13 +1,19 @@
 # create_html
 
 ## Overview
-create_html is a Shell script to create simply a new html file into the current directory.
-It creates a page dynamically on the name and what to include.
+create_html is a Shell script to be used to create simply a new html template file into
+the current directory.
+It writes the html code dynamically depending on the name of the file and what to include.
 
 ## Installation
+1. git clone git://github.com/idealsite/silus-script.git
+2. cd silus-script
+3. su
+4. cp create_html /usr/local/bin
+5. chmod 755 /usr/local/bin/create_html
+6. exit
 
 ## Usage
-
 create_html is invoked ad follows:
   create_html [-h | --help] file_name [jquery jqueryui css_name]
   (Parameters in the square brackets are optional)
