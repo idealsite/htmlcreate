@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ##################################################
 #   create_html is a Shell script for the laziest people.
 #   It can be used to create without spending a lot of time a new html template file into
@@ -177,10 +179,14 @@ function check_included() {
   esac
 }
 function print() {
+  title=${file:0:`expr ${#file} - 5`}
+  first_char=${title:0:1}
+  first_char=${first_char^^}
+  title=$first_char${title:1}
   echo "<!doctype html>" >> "$file"
   echo "<html>" >> "$file"
   echo "<head>" >> "$file"
-  echo "  <title></title>" >> "$file"
+  echo "  <title>$title</title>" >> "$file"
   if [ "$include_one" ] ; then
     echo "  $include_one" >> "$file"
   fi
