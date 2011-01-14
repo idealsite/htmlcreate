@@ -1,29 +1,29 @@
 # htmlcreate
 
-<!--## Overview-->
-<!--htmlcreate is a Shell script for the laziest people.-->
-<!--It can be used to create without spending a lot of time a new html template file into the current directory.  -->
-<!--It writes the html code dynamically depending on the name of the file and what to include.-->
+## Overview
+htmlcreate is a Shell script for the laziest people.
+It can be used to create without spending a lot of time a new html or php file into the current directory.
+It writes the html code dynamically depending on the name of the file and what to include.
 
-<!--## Installation-->
-<!--> 1. git clone git://github.com/idealsite/create_html.git-->
-<!--> 2. cd create_html-->
-<!--> 3. su-->
-<!--> 4. cp create_html /usr/local/bin-->
-<!--> 5. chmod 755 /usr/local/bin/create_html-->
-<!--> 6. exit-->
+## Installation
+1. git clone git://github.com/idealsite/htmlcreate.git
+2. cd htmlcreate
+3. su
+4. chmod 755 htmlcreate.sh
+5. cp htmlcreate.sh /usr/local/bin
+6. exit
 
-<!--## Usage-->
-<!--#### create_html is invoked as follows:  -->
-<!--    create_html [-h | --help] file_name [jquery jqueryui css_name]  -->
-<!--#### Parameters:  -->
-<!--    -h, --help    Display this help message and exit  -->
-<!--    file_name     The name of the html file you want to create-->
-<!--    jquery        Include jQuery in the html file [optional]-->
-<!--    jqueryui      Include jQuery User Interface in the html file [optional]-->
-<!--    css_name      The name of the external css file [optional]-->
+## Usage
+#### htmlcreate is invoked as follows:
+    htmlcreate [-h | --help] file_name [css js_script]
+#### Parameters:
+    -h, --help    Displays this help message and exit
+    file_name     The name of the html or php file you want to create
+    css           The name of the external css file [optional]
+      if you want to include a script without including a css, set this to "none"
+    js_script     The name of the js script you want to include [optional]
 
-<!--## Examples-->
-<!--    create_html new_page jquery newstyle.css-->
-<!--    create_html nicePage.html jqueryui BadStYlE-->
-<!--    create_html test jqueryui jquery style-->
+## Examples
+    htmlcreate index.php style.css script.js
+    htmlcreate ProPage ProStyle ProScript
+    htmlcreate newpage.htm none newscript.js

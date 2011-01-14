@@ -1,5 +1,11 @@
 #!/bin/bash
 
+  #####################################
+  # Author: idealsite                 #
+  # Email: eduardo@idealsite.it       #
+  # Website: http://www.idealsite.it  #
+  #####################################
+
 ##### DATA #####
 
 file="$1"
@@ -22,7 +28,7 @@ Parameters:
   -h, --help    Displays this help message and exit
   file_name     The name of the html or php file you want to create
   css           The name of the external css file [optional]
-    if you want to include a js script without including a css file, put this to "none"
+    if you want to include a script without including a css, set this to "none"
   js_script     The name of the js script you want to include [optional]
 
 HELP
