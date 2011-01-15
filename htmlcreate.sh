@@ -33,6 +33,7 @@ Parameters:
 
 HELP
 }
+
 function check_ext() {
   local name="$1"
   case "$2" in
@@ -59,6 +60,7 @@ function check_ext() {
       ;;
   esac
 }
+
 function check_file_type() {
   case "$1" in
     *.php|*.htm)
@@ -70,8 +72,18 @@ function check_file_type() {
   esac
   echo "$type";
 }
+
 function check_file() {
   file=$(check_ext "$file" "html")
+  if [[ "$file" = */* ]]
+  then
+    index=`expr index "$file" /`
+    index=`expr "$index" - 1`
+    dir=${file:0:$index}
+    mkdir "$dir"
+    css_before='<link rel="stylesheet" type="text/css" href="../'
+    script_before='<script type="text/javascript" src="../'
+  fi
   if [ -s "$file" ]
   then
     echo "The file already exists. Replace it? (y/n)"
@@ -95,11 +107,19 @@ function check_file() {
     touch "$file"
   fi
 }
+
 function check_css() {
   if [[ "$css" != "none" && "$css" != "" ]]
   then
     yeah_css="Yeah"
     css=$(check_ext "$css" "css")
+    if [[ "$css" = */* ]]
+    then
+      index=`expr index "$css" /`
+      index=`expr "$index" - 1`
+      dir=${css:0:$index}
+      mkdir "$dir"
+    fi
     if [ -s "$css" ]
     then
       echo "The css file alreay exists. Replace it? (y/n)"
@@ -124,10 +144,18 @@ function check_css() {
     fi
   fi
 }
+
 function check_script() {
   if [ "$script" ]
   then
     script=$(check_ext "$script" "js")
+    if [[ "$script" = */* ]]
+    then
+      index=`expr index "$script" /`
+      index=`expr "$index" - 1`
+      dir=${script:0:$index}
+      mkdir "$dir"
+    fi
     if [ -s "$script" ]
     then
       echo "The script file alreay exists. Replace it? (y/n)"
@@ -152,6 +180,7 @@ function check_script() {
     fi
   fi
 }
+
 function print() {
   local type=$(check_file_type "$file")
   title=${file:0:`expr ${#file} - $type`}
@@ -177,6 +206,7 @@ function print() {
   echo "</body>" >> "$file"
   echo "</html>" >> "$file"
 }
+
 function create() {
   if [[ "$file" = "-h" || "$file" = "--help" ]]
   then
