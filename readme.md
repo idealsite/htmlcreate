@@ -10,7 +10,7 @@ It writes the html code dynamically depending on the name of the file and what t
 2. cd htmlcreate
 3. su
 4. chmod 755 htmlcreate.sh
-5. cp htmlcreate.sh /usr/local/bin
+5. cp htmlcreate.sh /usr/local/bin/htmlcreate
 6. exit
 
 ## Usage
