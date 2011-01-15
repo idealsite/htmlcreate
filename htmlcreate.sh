@@ -37,19 +37,22 @@ function check_ext() {
   local name="$1"
   case "$2" in
     html)
-      if [[ "$name" != *.html && "$name" != *.htm && "$name" != *.php ]] ; then
+      if [[ "$name" != *.html && "$name" != *.htm && "$name" != *.php ]]
+      then
         name="$name.html"
       fi
       echo "$name"
       ;;
     css)
-      if [[ "$name" != *.css ]] ; then
+      if [[ "$name" != *.css ]]
+      then
         name="$name.css"
       fi
       echo "$name"
       ;;
     js)
-      if [[ "$name" != *.js ]] ; then
+      if [[ "$name" != *.js ]]
+      then
         name="$name.js"
       fi
       echo "$name"
@@ -69,7 +72,8 @@ function check_file_type() {
 }
 function check_file() {
   file=$(check_ext "$file" "html")
-  if [ -s "$file" ] ; then
+  if [ -s "$file" ]
+  then
     echo "The file already exists. Replace it? (y/n)"
     read "answer"
     case "$answer" in
@@ -92,10 +96,12 @@ function check_file() {
   fi
 }
 function check_css() {
-  if [[ "$css" != "none" ]] ; then
+  if [[ "$css" != "none" && "$css" != "" ]]
+  then
     yeah_css="Yeah"
     css=$(check_ext "$css" "css")
-    if [ -s "$css" ] ; then
+    if [ -s "$css" ]
+    then
       echo "The css file alreay exists. Replace it? (y/n)"
       read "answer"
       case "$answer" in
@@ -119,9 +125,11 @@ function check_css() {
   fi
 }
 function check_script() {
-  if [ "$script" ] ; then
+  if [ "$script" ]
+  then
     script=$(check_ext "$script" "js")
-    if [ -s "$script" ] ; then
+    if [ -s "$script" ]
+    then
       echo "The script file alreay exists. Replace it? (y/n)"
       read "answer"
       case "$answer" in
@@ -154,10 +162,12 @@ function print() {
   echo "<html>" >> "$file"
   echo "<head>" >> "$file"
   echo "  <title>$title</title>" >> "$file"
-  if [ "$yeah_css" ] ; then
+  if [ "$yeah_css" ]
+  then
     echo "  $css_before$css$css_after" >> "$file"
   fi
-  if [ "$script" ] ; then
+  if [ "$script" ]
+  then
     echo "  $script_before$script$script_after" >> "$file"
   fi
   echo "</head>" >> "$file"
@@ -168,9 +178,11 @@ function print() {
   echo "</html>" >> "$file"
 }
 function create() {
-  if [[ "$file" = "-h" || "$file" = "--help" ]] ; then
+  if [[ "$file" = "-h" || "$file" = "--help" ]]
+  then
     show_help
-  elif [ ! "$file" ] ; then
+  elif [ ! "$file" ]
+  then
     echo "I can't create an unnamed file. Tell me the name."
     read "file"
     create
