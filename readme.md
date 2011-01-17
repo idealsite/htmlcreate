@@ -2,7 +2,9 @@
 
 ## Overview
 htmlcreate is a Shell script for the laziest people.
+
 It can be used to create without spending a lot of time a new html or php file.
+
 It writes the code dynamically depending on  what to include (css or js files).
 
 ## Installation
