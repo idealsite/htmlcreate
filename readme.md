@@ -2,8 +2,8 @@
 
 ## Overview
 htmlcreate is a Shell script for the laziest people.
-It can be used to create without spending a lot of time a new html or php file into the current directory.
-It writes the html code dynamically depending on the name of the file and what to include.
+It can be used to create without spending a lot of time a new html or php file.
+It writes the code dynamically depending on  what to include (css or js files).
 
 ## Installation
 1. git clone git://github.com/idealsite/htmlcreate.git
