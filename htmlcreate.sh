@@ -19,7 +19,6 @@ script_after='"></script>'
 ##### FUNCTIONS #####
 
 function show_help() {
-  clear
   cat << HELP
 
 htmlcreate is invoked as follows:
@@ -213,9 +212,7 @@ function create() {
     show_help
   elif [ ! "$file" ]
   then
-    echo "I can't create an unnamed file. Tell me the name."
-    read "file"
-    create
+    show_help
   else
     check_file
     check_css
