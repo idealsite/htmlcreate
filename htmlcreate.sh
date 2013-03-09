@@ -3,6 +3,7 @@
   #####################################
   # Author: idealsite                 #
   # Email: eduardo@idealsite.it       #
+  # Twitter: @idealsite               #
   # Website: http://www.idealsite.it  #
   #####################################
 
